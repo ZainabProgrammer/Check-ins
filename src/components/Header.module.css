@@ -1,0 +1,38 @@
+.wrapper {
+  height: 64px;
+  border-radius: 20px;
+  box-shadow: 14px 17px 40px 0px #7090b014;
+  display: flex;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  margin-top: 2rem;
+}
+@media screen and (max-width: 600px) {
+  .wrapper {
+    height: 64px;
+    border-radius: 20px;
+    box-shadow: 14px 17px 40px 0px #7090b014;
+    margin-left: 0rem;
+    margin-right: 0rem;
+    display: flex;
+  }
+}
+.logo {
+  color: white;
+  background-color: #7b5aff;
+  padding: 0.9rem 0.5rem;
+  margin-left: 2px;
+  margin: auto;
+  text-align: center;
+  border: 1px dashed;
+  font-weight: 200;
+  font-size: 15px;
+}
+.wrapper_second {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  gap: 1rem;
+  margin-right: 10px;
+}
