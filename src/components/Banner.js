@@ -8,7 +8,7 @@ import styles from "./Banner.module.css";
 import "@material/web/dialog/dialog";
 import "@material/web/button/text-button";
 import Image from "next/image";
-
+import banner from "../assets/Banner.png";
 function Banner() {
   const [txt, setTxt] = useState("");
   const [img, setImg] = useState("");
@@ -52,7 +52,7 @@ function Banner() {
 
   useEffect(() => {
     getData();
-  }, [data]);
+  }, []);
 
   const fileInputRef = useRef(null);
   const handleClickImage = () => {
@@ -69,7 +69,7 @@ function Banner() {
           <div className={styles.banner}>
             <Image
               className={styles.img}
-              src="/banner.png"
+              src={banner}
               alt="banner"
               width={800}
               height={800}

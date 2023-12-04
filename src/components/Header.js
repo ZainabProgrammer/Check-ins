@@ -10,7 +10,7 @@ const Header = () => {
           <md-filled-button>Feedback</md-filled-button>
           <img src="/bell.png" />
           <img src="/info.png" />
-          <img src="/avatar.png" />
+          <img src="/Avatar.png" />
           <img src="/dropdown.png" />
         </div>
       </div>

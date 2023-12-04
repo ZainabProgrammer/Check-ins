@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import styles from "./Checkins.module.css";
 import { format } from "date-fns";
 import Image from "next/image";
-import avatar from "/public/avatar-1.png";
+import avatar from "../assets/Avatar-1.png";
+
 const Checkins = ({ data }) => {
   const [detail, setdetail] = useState("");
   const [sorted, setsorted] = useState(false);
