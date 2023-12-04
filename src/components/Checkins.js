@@ -18,12 +18,8 @@ const Checkins = ({ data }) => {
     });
 
     setdetail(value);
-
-    console.log(detail, "details");
-    console.log("modal open");
   };
 
-  console.log(detail, "details");
   const handleSort = () => {
     setsorted(!sorted);
   };

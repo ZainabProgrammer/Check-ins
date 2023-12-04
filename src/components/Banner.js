@@ -12,19 +12,13 @@ function Banner() {
   const [txt, setTxt] = useState("");
   const [img, setImg] = useState("");
   const [data, setData] = useState([]);
-  const [modalOpen, setmodalOpen] = useState(false);
-  const handleClose = () => {
-    setmodalOpen(false);
-  };
+
   const handleAdd = () => {
-    setmodalOpen(true);
     const dialog = document.getElementById("modal");
     let openbutton = document.getElementById("open");
     openbutton.addEventListener("click", async () => {
       await dialog.show();
     });
-
-    console.log("modal open");
   };
   const handleUpload = (e) => {
     console.log(e.target.files[0]);
@@ -42,13 +36,9 @@ function Banner() {
       return;
     } else {
       const valRef = collection(txtDB, "txtData");
-      try {
-        await addDoc(valRef, { txtVal: txt, imgUrl: img, date: new Date() });
-        alert("Data added successfully");
-        window.location.reload();
-      } catch {
-        alert("Try again");
-      }
+      await addDoc(valRef, { txtVal: txt, imgUrl: img, date: new Date() });
+      alert("Data added successfully");
+      window.location.reload();
     }
   };
 
@@ -57,7 +47,6 @@ function Banner() {
     const dataDb = await getDocs(valRef);
     const allData = dataDb.docs.map((val) => ({ ...val.data(), id: val.id }));
     setData(allData);
-    console.log(dataDb);
   };
 
   useEffect(() => {
@@ -94,6 +83,10 @@ function Banner() {
             <md-dialog id="modal">
               <form slot="content" id="form-id" method="dialog">
                 <div className={styles.modal_wrapper}>
+                  <p className={styles.alert}>
+                    If clicking on add button not show alert box of successfull
+                    adding CheckIn to database please try adding once more
+                  </p>
                   <h3 className={styles.add}>Add Check In</h3>
 
                   <h3>Title</h3>
@@ -128,9 +121,7 @@ function Banner() {
                 <md-text-button form="form-id" onClick={handleClick}>
                   Add
                 </md-text-button>
-                <md-text-button form="form-id" onClick={handleClose}>
-                  Cancel
-                </md-text-button>
+                <md-text-button form="form-id">Cancel</md-text-button>
               </div>
             </md-dialog>
           </div>

@@ -93,3 +93,8 @@
   background: #f8f8f8;
   padding: 0.5rem;
 }
+.alert {
+  background-color: #f8f8f8;
+  padding: 0.7rem;
+  color: rgb(155, 155, 3);
+}
