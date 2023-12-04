@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styles from "./Checkins.module.css";
 import { format } from "date-fns";
+import Image from "next/image";
 
 const Checkins = ({ data }) => {
   const [detail, setdetail] = useState("");
@@ -65,7 +66,12 @@ const Checkins = ({ data }) => {
                 <div>{formatDate(value.date.toDate())}</div>
                 <div className={styles.wrapper}>
                   {" "}
-                  <img src="/avatar-1.png" />
+                  <Image
+                    src="/avatar-1.png"
+                    width={32}
+                    height={32}
+                    alt="avatar"
+                  />
                   <p>Owner: John Doe</p>
                 </div>
               </div>

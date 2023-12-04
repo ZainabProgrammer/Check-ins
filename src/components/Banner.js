@@ -7,6 +7,7 @@ import Checkins from "./Checkins";
 import styles from "./Banner.module.css";
 import "@material/web/dialog/dialog";
 import "@material/web/button/text-button";
+import Image from "next/image";
 
 function Banner() {
   const [txt, setTxt] = useState("");
@@ -66,7 +67,15 @@ function Banner() {
       <div>
         <div className={styles.main}>
           <div className={styles.banner}>
-            <img src="/banner.png" />
+            <Image
+              className={styles.img}
+              src="/banner.png"
+              alt="banner"
+              width={800}
+              height={800}
+              objectFit="cover"
+              style={{ width: "100% " }}
+            />
             <div className={styles.content_wrapper}>
               <div className={styles.content}>
                 <h1>Hi! 👋 James Doe</h1>
