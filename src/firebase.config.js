@@ -2,13 +2,15 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 // Your web app's Firebase configuration
+
 const firebaseConfig = {
-  apiKey: "AIzaSyBkPGgwJIVcifK7ChUxuy8oNUoX5xQTI6Q",
-  authDomain: "checkins-ba86d.firebaseapp.com",
-  projectId: "checkins-ba86d",
-  storageBucket: "checkins-ba86d.appspot.com",
-  messagingSenderId: "632140206040",
-  appId: "1:632140206040:web:43956ab0d962d874e4ecad",
+  apiKey: "AIzaSyAjJiObvOiwiNO_AsJrYXQNtozI9tUGXdM",
+  authDomain: "project-checkins.firebaseapp.com",
+  projectId: "project-checkins",
+  storageBucket: "project-checkins.appspot.com",
+  messagingSenderId: "529976893492",
+  appId: "1:529976893492:web:e39a343167af6ed01d2a61",
+  measurementId: "G-X6WWCXVT7Y",
 };
 
 // Initialize Firebase

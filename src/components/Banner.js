@@ -43,15 +43,31 @@ function Banner() {
     }
   };
 
-  const getData = async () => {
-    const valRef = collection(txtDB, "txtData");
-    const dataDb = await getDocs(valRef);
-    const allData = dataDb.docs.map((val) => ({ ...val.data(), id: val.id }));
-    setData(allData);
-  };
-
   useEffect(() => {
-    getData();
+    let isMounted = true;
+
+    const fetchData = async () => {
+      try {
+        const valRef = collection(txtDB, "txtData");
+        const dataDb = await getDocs(valRef);
+        const allData = dataDb.docs.map((val) => ({
+          ...val.data(),
+          id: val.id,
+        }));
+
+        if (isMounted) {
+          setData(allData);
+        }
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+    console.log("fetching data");
+    return () => {
+      isMounted = false;
+    };
   }, []);
 
   const fileInputRef = useRef(null);
