@@ -84,8 +84,9 @@ function Banner() {
               <form slot="content" id="form-id" method="dialog">
                 <div className={styles.modal_wrapper}>
                   <p className={styles.alert}>
-                    If clicking on add button not show alert box of successfull
-                    adding CheckIn to database please try adding once more
+                    Tip: If clicking on add button not show alert box of
+                    successfull adding CheckIn to database please try adding
+                    once more
                   </p>
                   <h3 className={styles.add}>Add Check In</h3>
 
